@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/theme_red</color>
+    <color name="colorPrimaryDark">@color/red_press</color>
+    <color name="colorAccent">@color/theme_red</color>
+
+    <color name="black">@android:color/black</color>
+    <color name="white">@android:color/white</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <!-- 主题红色 -->
+    <color name="theme_red">#EA5504</color>
+    <color name="red">@color/theme_red</color>
+    <!-- 红色按钮按下颜色 -->
+    <color name="red_press">#D74300</color>
+    <color name="yellow">#F69D08</color>
+    <color name="chocolate">#D36D07</color>
+    <!-- 蓝色 -->
+    <color name="blue">#0099D4</color>
+    <color name="blue_press">#3389BF</color>
+    <color name="blue_translucence">#500099D4</color>
+    <!-- 按钮不可用颜色 -->
+    <color name="button_disable">#E2E2E2</color>
+    <!-- 青色 -->
+    <color name="cyan">#3BB473</color>
+
+    <!-- 背景色 -->
+    <color name="bg_grey">#F3F1EE</color>
+    <!-- 分割线颜色 c1c2c4 -->
+    <color name="divider_grey">#efefef</color>
+
+    <!-- 黄色按钮按下颜色 -->
+    <color name="yellow_press">#F08223</color>
+
+    <!-- 字体颜色 -->
+    <!-- 黑色 -->
+    <color name="text_black">#3E3E3E</color>
+    <!-- 中灰 -->
+    <color name="text_gray">#888888</color>
+    <color name="text_grey">@color/text_gray</color>
+
+    <!-- 浅灰 -->
+    <color name="text_gray_light">#CCCCCC</color>
+    <color name="text_grey_light">@color/text_gray_light</color>
+    <!-- 浅特殊文字颜色 -->
+    <color name="text_cyan">@color/cyan</color>
+    <!-- 白色 -->
+    <color name="textWhite">@android:color/white</color>
+
+    <!-- 微博，新鲜事转发背景 -->
+    <color name="bg_grey_light">#FAFBFD</color>
+
+
+    /******************************************Shaycormac******************************************/
+    <color name="group_grey">#888888</color>
+    <color name="group_take_photo">#efefef</color>
+    <color name="group_background_grey">#f3f1ee</color>
+    <!-- 部落列表的社团种类背景色 -->
+    <color name="group_background_category">#35bbb0</color>
+    <!-- 部落列表的社团归属 团支部 -->
+    <color name="group_background_tuan">#f5716e</color>
+    <!-- 部落列表的社团归属 学生社团 -->
+    <color name="group_background_stu">#ff9900</color>
+    <!--规范中标签的背景色-->
+    <color name="text_label_background">#eeeeee</color>
+    <color name="text_label_black_background">#222222</color>
+    <color name="text_label_red_background">#ff4526</color>
+    <!-- 踢出部落-->
+    <color name="text_label_kick_out">#ea5b5b</color>
+    <!-- 设置管理员-->
+    <color name="text_label_set_admin">#3ea1e5</color>
+    <!-- 部落修改确定按钮和加入部落确定按钮-->
+    <color name="btn_ensure">#ff6521</color>
+    <!-- 扫一扫页面的字体颜色-->
+    <color name="qrcode_text_color">#b2b0af</color>
+    <!--活动公告-->
+    <color name="event_notice">#3a9fdf</color>
+    <!--倒计时广告-->
+    <color name="bg_grey666">#666</color>
+
+    /**************************************Claire Cui Start**********************************/
+    <color name="bg_calendar">#fafafa</color>
+    /**************************************Claire Cui End**********************************/
+</resources>

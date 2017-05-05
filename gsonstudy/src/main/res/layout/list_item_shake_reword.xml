@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_shake_click"
+    android:clickable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="97dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/round_img_shake_gift"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp18"
+       />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp18"
+        android:layout_marginRight="@dimen/dp18"
+        android:layout_toRightOf="@+id/round_img_shake_gift">
+
+        <TextView
+            android:id="@+id/tv_shake_gift_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菊花一朵"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/textSize16sp"/>
+
+        <TextView
+            android:id="@+id/tv_shake_gift_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shake_gift_name"
+            android:layout_marginTop="6dp"
+            android:text="时间：22小时前"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/textSize12sp"/>
+        <TextView
+            android:id="@+id/tv_shake_gift_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shake_gift_time"
+            android:layout_marginTop="4dp"
+            android:text="来源：摇一摇免费"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/textSize12sp"/>
+        <TextView
+            android:id="@+id/tv_shake_gift_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shake_gift_source"
+            android:layout_marginTop="4dp"
+            android:text="类型：实物"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/textSize12sp"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_group_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/iv_group_item_log"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginLeft="@dimen/shay_18dp"
+        android:layout_marginTop="@dimen/shay_12dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/iv_group_log" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/iv_group_item_log">
+
+        <TextView
+            android:id="@+id/tv_group_item_depart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_item_name"
+            android:layout_marginLeft="@dimen/shay_18dp"
+            android:layout_marginTop="@dimen/shay_8dp"
+            android:background="@drawable/bg_group_stu_rounded"
+            android:padding="2dp"
+            android:text="学生社团"
+            android:textColor="@color/textWhite"
+            android:textSize="@dimen/shay_10dp" />
+
+        <TextView
+            android:id="@+id/tv_group_item_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_item_name"
+            android:layout_marginLeft="@dimen/shay_6dp"
+            android:layout_marginTop="@dimen/shay_8dp"
+            android:layout_toRightOf="@+id/tv_group_item_depart"
+            android:background="@drawable/bg_group_category_rounded"
+            android:padding="2dp"
+            android:text="摄影类"
+            android:textColor="@color/textWhite"
+            android:textSize="@dimen/shay_10dp" />
+
+
+        <TextView
+            android:id="@+id/tv_group_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/shay_18dp"
+            android:layout_marginRight="@dimen/shay_18dp"
+            android:layout_marginTop="0dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="部落名称,我是"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/shay_sp16" />
+
+        <TextView
+            android:id="@+id/tv_group_item_academy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_item_memCount"
+            android:layout_marginBottom="@dimen/shay_8dp"
+            android:layout_marginLeft="@dimen/shay_12dp"
+            android:layout_marginRight="@dimen/shay_12dp"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="所属学院："
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/shay_sp12" />
+
+        <TextView
+            android:id="@+id/tv_group_item_memCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_item_active"
+            android:layout_marginLeft="@dimen/shay_18dp"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            android:text="成员"
+            android:textColor="@color/text_grey_light"
+            android:textSize="@dimen/shay_sp12" />
+
+        <TextView
+            android:id="@+id/tv_group_item_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_group_item_depart"
+            android:layout_marginLeft="@dimen/shay_18dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:text="活力值"
+            android:textColor="@color/text_grey_light"
+            android:textSize="@dimen/shay_sp12" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/shay_0.5dp"
+        android:background="@color/group_take_photo"/>
+
+</RelativeLayout>

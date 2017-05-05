@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.assassin.gsonstudy.activity.MainActivity">
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo"
+       android:text="测试OkGo"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo1"
+       android:text="显示Toast"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo2"
+       android:text="隐藏Toast"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo3"
+       android:text="测试Refersh"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo4"
+       android:text="测试OkGo"/>
+</LinearLayout>
