@@ -8,18 +8,19 @@
     app:cardElevation="@dimen/shay_8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <LinearLayout
+    android:padding="@dimen/shay_12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="horizontal">
     <ImageView
-        android:padding="12dp"
+        
         android:id="@+id/imgTypeBIcon"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"/>
+        android:scaleType="fitCenter"/>
     <TextView
+        android:layout_marginLeft="@dimen/shay_12dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

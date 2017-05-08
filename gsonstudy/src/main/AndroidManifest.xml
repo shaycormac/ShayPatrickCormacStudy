@@ -20,6 +20,9 @@
         </activity>
         <activity android:name=".activity.OkGoActivity" />
         <activity android:name=".activity.ShakeRecordListActivity"></activity>
+        <meta-data
+            android:name="com.assassin.gsonstudy.application.ShayCormacGlideModule"
+            android:value="GlideModule"/>
     </application>
 
 </manifest>
