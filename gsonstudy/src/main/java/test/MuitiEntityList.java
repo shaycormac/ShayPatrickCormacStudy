@@ -11,6 +11,7 @@ import com.assassin.gsonstudy.entity.muilEntity.TypeB;
 import com.assassin.gsonstudy.entity.muilEntity.TypeC;
 import com.assassin.gsonstudy.utils.GlideUtil;
 import com.assassin.gsonstudy.widget.net.Api;
+import com.assassin.gsonstudy.widget.rcv.GridLayoutManagerParams;
 import com.assassin.gsonstudy.widget.rcv.RecyclerViewList;
 import com.assassin.gsonstudy.widget.rcv.RefreshRecyclerView;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -32,7 +33,8 @@ import okhttp3.Response;
 public class MuitiEntityList extends RecyclerViewList<MuiltTypeTest> {
     public MuitiEntityList(Context context, RefreshRecyclerView prRecyclerView, View headerView) {
         super(context, prRecyclerView, headerView);
-       // setBaseLayoutManagerParam(new StaggeredGridLayoutManagerParams(context,2, StaggeredGridLayoutManager.VERTICAL));
+      //  setBaseLayoutManagerParam(new StaggeredGridLayoutManagerParams(context,2, StaggeredGridLayoutManager.VERTICAL));
+        setBaseLayoutManagerParam(new GridLayoutManagerParams(context,2));
         initListViewStart();
     }
 
@@ -44,7 +46,7 @@ public class MuitiEntityList extends RecyclerViewList<MuiltTypeTest> {
     @Override
     public boolean handleResponse(Response response, int actionType) {
         List<MuiltTypeTest> tests = getList();
-        if (mListItems.size()<20) 
+        if (mListItems.size()<16) 
         {
             if (actionType != RecyclerViewList.GETMORE)
                 mListItems.addAll(tests);

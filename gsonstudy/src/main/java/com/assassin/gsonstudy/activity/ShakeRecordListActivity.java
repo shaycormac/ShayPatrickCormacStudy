@@ -8,7 +8,7 @@ import android.view.View;
 import com.assassin.gsonstudy.R;
 import com.assassin.gsonstudy.widget.rcv.RefreshRecyclerView;
 
-import test.MuitiEntityList;
+import test.ShakeRecordList;
 
 public class ShakeRecordListActivity extends AppCompatActivity {
 
@@ -19,7 +19,7 @@ public class ShakeRecordListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shake_record_list);
         RefreshRecyclerView recyclerView = (RefreshRecyclerView) findViewById(R.id.refresh_rcv_group_list);
         View headView = LayoutInflater.from(this).inflate(R.layout.item_group_list, null);
-      //  new ShakeRecordList(this, recyclerView,headView);
-        new MuitiEntityList(this, recyclerView, headView);
+        new ShakeRecordList(this, recyclerView,headView);
+       // new MuitiEntityList(this, recyclerView, headView);
     }
 }
