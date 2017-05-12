@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(activity, ShakeRecordListActivity.class));
                 break;
             case R.id.btnOkGo4:
+                startActivity(new Intent(activity, GlideActivity.class));
                 break;
         }
     }

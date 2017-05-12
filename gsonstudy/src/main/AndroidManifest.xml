@@ -19,10 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.OkGoActivity" />
-        <activity android:name=".activity.ShakeRecordListActivity"></activity>
+        <activity android:name=".activity.ShakeRecordListActivity" />
+
         <meta-data
             android:name="com.assassin.gsonstudy.application.ShayCormacGlideModule"
-            android:value="GlideModule"/>
+            android:value="GlideModule" />
+
+        <activity android:name=".activity.GlideActivity"></activity>
     </application>
 
 </manifest>
