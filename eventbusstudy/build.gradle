@@ -31,4 +31,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //eventBus
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.android.support:support-dynamic-animation:25.3.1'
 }

@@ -11,4 +11,10 @@
         android:layout_height="40dp"
         android:id="@+id/btnOkGo"
         android:text="测试EventBus2.0"/>
+    <Button
+        android:layout_below="@+id/btnOkGo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/btnOkGo2"
+        android:text="弹簧动画"/>
 </RelativeLayout>

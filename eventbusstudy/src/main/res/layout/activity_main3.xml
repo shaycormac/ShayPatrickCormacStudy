@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.assassin.eventbusstudy.Main3Activity">
+    <FrameLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/left_logo_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:id="@+id/right_logo_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/iv_group_log"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+        
+    </FrameLayout>
+    
+    <TextView
+        android:id="@+id/desc_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="NativeMessage"/>
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/signin_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Have a account,sign in"/>
+
+</LinearLayout>
