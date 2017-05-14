@@ -1,10 +1,13 @@
 package com.assassin.shaystudy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 
+import com.assassin.shaystudy.activity.SpringActivity;
 import com.assassin.shaystudy.handle.CornersTransform;
 import com.bumptech.glide.Glide;
 
@@ -27,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(urlGif).placeholder(R.mipmap.placeholder).error(R.mipmap.error).dontAnimate().into(imgGlide);
         //加载视频的缩略图
         File videoFile = new File(Environment.getExternalStorageDirectory(), "无耻/无耻之徒.Shameless.US.S07E11.720p.HDTV.X264-双语字幕.mp4");
-        Glide.with(this).load(videoFile).placeholder(R.mipmap.placeholder).error(R.mipmap.error).transform(new CornersTransform(this,50f)).into(imgVideoThumb);
+        Glide.with(this).load(videoFile).placeholder(R.mipmap.placeholder).error(R.mipmap.error).transform(new CornersTransform(this, 50f)).into(imgVideoThumb);
+        imgGlide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SpringActivity.class));
+                
+            }
+        });
     }
 }

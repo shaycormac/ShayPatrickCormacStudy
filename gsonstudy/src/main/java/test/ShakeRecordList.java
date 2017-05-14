@@ -29,7 +29,7 @@ public class ShakeRecordList extends RecyclerViewList<ShakeRecord> {
     public ShakeRecordList(Context context, RefreshRecyclerView prRecyclerView, View headView) 
     {
         //todo 布局文件没有写
-        super(context, prRecyclerView, R.layout.list_item_shake_reword,null);
+        super(context, prRecyclerView, R.layout.list_item_shake_reword,headView);
         //设置布局管理器
         setBaseLayoutManagerParam(new GridLayoutManagerParams(context,2));
         initListViewStart();

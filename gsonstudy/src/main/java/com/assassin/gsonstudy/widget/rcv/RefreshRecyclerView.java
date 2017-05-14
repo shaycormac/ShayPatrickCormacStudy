@@ -97,14 +97,14 @@ public class RefreshRecyclerView extends SwipeRefreshLayout {
         } else if (baseLayoutManagerParam instanceof GridLayoutManagerParams) 
         {//GridView
             final GridLayoutManagerParams glParam = (GridLayoutManagerParams) baseLayoutManagerParam;
-            GridLayoutManager glManager = null;
+            GridLayoutManager glManager;
             if (glParam.orientation >= 0) {
                 glManager = new GridLayoutManager(glParam.context, glParam.spanCount, glParam.orientation, glParam.reverseLayout);
 
             } else {
                 glManager = new GridLayoutManager(glParam.context, glParam.spanCount);
             }
-            glManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+           /* glManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) 
                 {
@@ -115,7 +115,7 @@ public class RefreshRecyclerView extends SwipeRefreshLayout {
                     }
                     return 1;
                 }
-            });
+            });*/
            /* baseQuickAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(GridLayoutManager gridLayoutManager, int position) 
@@ -126,7 +126,7 @@ public class RefreshRecyclerView extends SwipeRefreshLayout {
             recyclerView.setLayoutManager(glManager);
 
         } else if (baseLayoutManagerParam instanceof StaggeredGridLayoutManagerParams) 
-        {//瀑布流暂时添加不支持添加header和footer
+        {
             final StaggeredGridLayoutManagerParams sglParam = (StaggeredGridLayoutManagerParams) baseLayoutManagerParam;
             StaggeredGridLayoutManager sgManager = new StaggeredGridLayoutManager(sglParam.spanCount, sglParam.orientation);
             recyclerView.setLayoutManager(sgManager);
