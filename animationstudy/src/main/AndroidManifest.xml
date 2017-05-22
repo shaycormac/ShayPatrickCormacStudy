@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AnimaButtonActivity"></activity>
+        <activity android:name=".activity.AnimaButtonActivity" />
+        <activity android:name=".activity.EnterAndExitActivity"></activity>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.assassin.anim.activity.AnimaButtonActivity;
+import com.assassin.anim.activity.EnterAndExitActivity;
 import com.assassin.anim.widget.ViewWrapper;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean isCalculat=true;
 
     private Button btnAnimaTest;
+
+    private Button btnEnterExit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AnimaButtonActivity.class));
+            }
+        });
+
+
+        btnEnterExit = (Button) findViewById(R.id.btnEnterExit);
+        btnEnterExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EnterAndExitActivity.class));
             }
         });
     }
