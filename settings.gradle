@@ -1,1 +1,1 @@
-include ':app', ':gsonstudy', ':eventbusstudy', ':greendaostudy'
+include ':app', ':gsonstudy', ':eventbusstudy', ':greendaostudy', ':animationstudy'

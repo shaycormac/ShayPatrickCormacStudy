@@ -12,14 +12,17 @@
         android:src="@mipmap/error"
         android:scaleType="centerCrop"
         android:layout_marginBottom="20dp"/>
-    
+    <FrameLayout
+        android:layout_weight="1000"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 <com.assassin.shaystudy.widget.SpringScrollView
-    android:layout_weight="1000"
+   
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         tools:context="com.assassin.shaystudy.activity.SpringActivity"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,8 +61,9 @@
         </LinearLayout>
         
 </com.assassin.shaystudy.widget.SpringScrollView>
+    </FrameLayout>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:text="按钮"/>
 </LinearLayout>
