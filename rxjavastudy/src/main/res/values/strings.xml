@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RxJavaStudy</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_rxjava2">Rxjava2Activity</string>
+</resources>

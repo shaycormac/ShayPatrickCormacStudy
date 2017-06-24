@@ -1,1 +1,1 @@
-include ':app', ':gsonstudy', ':eventbusstudy', ':greendaostudy', ':animationstudy'
+include ':app', ':gsonstudy', ':eventbusstudy', ':greendaostudy', ':animationstudy', ':constraintlayout', ':rxjavastudy'

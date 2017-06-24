@@ -45,7 +45,7 @@ public class SpringNestedScrollView extends NestedScrollView
     {
         switch(ev.getAction())
         {
-          case MotionEvent.ACTION_DOWN :
+          case MotionEvent.ACTION_MOVE :
               if (getScrollY()<=0)
               {
                   //顶部下拉

@@ -5,8 +5,8 @@ package com.assassin.shaystudy.widget;
  * @Email: fang47881@126.com
  * @Ltd: GoldMantis
  * @Date: 2017/5/8 18:04
- * @Version:
- * @Description:
+ * @Version: 1.0
+ * @Description: 垂直方向上的弹簧动画
  */
 
 import android.content.Context;
