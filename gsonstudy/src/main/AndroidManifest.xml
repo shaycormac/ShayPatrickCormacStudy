@@ -25,7 +25,8 @@
             android:name="com.assassin.gsonstudy.application.ShayCormacGlideModule"
             android:value="GlideModule" />
 
-        <activity android:name=".activity.GlideActivity"></activity>
+        <activity android:name=".activity.GlideActivity" />
+        <activity android:name=".activity.NewNetActivity"></activity>
     </application>
 
 </manifest>

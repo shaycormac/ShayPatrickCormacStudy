@@ -32,4 +32,9 @@
        android:layout_height="40dp"
        android:id="@+id/btnOkGo4"
        android:text="测试OkGo"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:id="@+id/btnOkGo5"
+       android:text="测试封装的OkGo"/>
 </LinearLayout>

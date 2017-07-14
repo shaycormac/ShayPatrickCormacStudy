@@ -1,5 +1,6 @@
 package com.assassin.rxjava.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.assassin.rxjava.R;
@@ -23,22 +25,33 @@ import com.assassin.rxjava.entity.UserInfo;
 import com.assassin.rxjava.interf.Api;
 import com.assassin.rxjava.util.VolleyLog;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.BackpressureStrategy;
+import io.reactivex.Flowable;
+import io.reactivex.FlowableEmitter;
+import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
@@ -48,6 +61,7 @@ public class Rxjava2Activity extends AppCompatActivity {
     private Disposable disposable;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private String TAG = getClass().getSimpleName();
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +78,8 @@ public class Rxjava2Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        button = (Button) findViewById(R.id.button);
+        bindListener();
         //第一格列兹
         //  firstRxjava();
         //连接起来链式调用
@@ -81,9 +97,210 @@ public class Rxjava2Activity extends AppCompatActivity {
         //嵌套请求，使用flatMap(注册完后登录)
       //  nestedRequest();
         //zip的学习，适用于一个页面多个接口，同时有数据了才展示
-        zipStudy();
+      //  zipStudy();
         //zip的具体业务场景模拟
-        zipRequestStudy();
+       // zipRequestStudy();
+        //flowable的基本学习，听说可以解决背压问题？
+        //flowableStudy();
+        //flowable异步线程的上下游处理能力
+    //    asynFlowableStudy();
+        //contact操作符的学习
+       // contactStudy();
+        //filter学习
+     //  filterStudy();
+        //buffer学习
+       // bufferStudy();
+        //timer
+        //timerStudy();
+        //single 
+        singleStudy();
+        
+    }
+
+    private void bindListener() {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Rxjava2Activity.this,RxNetRequestStudyActivity.class));
+            }
+        });
+    }
+
+    private void singleStudy() {
+        Single.just(new Random().nextInt())
+                .subscribe(new SingleObserver<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        
+                    }
+
+                    @Override
+                    public void onSuccess(Integer value) 
+                    {
+                        VolleyLog.d("获取的随机值为：%d",value);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) 
+                    {
+                        VolleyLog.d("获取的随机值错误为：%s",e.getLocalizedMessage());
+                    }
+                });
+    }
+
+    private void timerStudy() {
+       // Log.e(TAG, "timer start : " + TimeUtil.getNowStrTime() + "\n");
+        Observable.timer(2, TimeUnit.SECONDS)
+                .just(1, 2, 3, 4, 5)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        
+                    }
+
+                    @Override
+                    public void onNext(Integer value) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void bufferStudy()
+    {
+        Observable.just(1, 2, 3, 4, 5)
+                .buffer(3, 2)
+                .subscribe(new Consumer<List<Integer>>() {
+                    @Override
+                    public void accept(List<Integer> integers) throws Exception 
+                    {
+                        for (Integer integer : integers) {
+                            VolleyLog.d("得到的字符串：%d", integer);
+                        }
+
+                    }
+                });
+    }
+
+    private void filterStudy() {
+        Observable.just(1, 20, -15, 33)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) throws Exception
+                    {
+                        return integer>0;
+                    }
+                })
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception 
+                    {
+                        VolleyLog.d("得到的字符串：%d", integer);
+                    }
+                });
+    }
+
+    private void contactStudy() {
+        Observable<Integer> observable =  Observable.just(1, 2, 3).subscribeOn(Schedulers.io());
+        Observable<Integer> observable2 =  Observable.just(4, 5, 6).subscribeOn(Schedulers.io());
+        Observable.concatArray(observable, observable2)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Integer>() {
+                               @Override
+                               public void accept(Integer integer) throws Exception 
+                               {
+                                   VolleyLog.d("得到的字符串：%d", integer);
+                               }
+                           }
+                );
+                
+    }
+
+    private void asynFlowableStudy() 
+    {
+        Flowable.create(new FlowableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(FlowableEmitter<Integer> e) throws Exception {
+                VolleyLog.d("得到下游的处理能力的值为 %s", e.requested() + "");
+            }
+        }, BackpressureStrategy.ERROR)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Integer>() {
+                    @Override
+                    public void onSubscribe(Subscription s)
+                    {
+                        s.request(1000);
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void flowableStudy() {
+        Flowable.create(new FlowableOnSubscribe<Integer>() 
+        {
+            @Override
+            public void subscribe(FlowableEmitter<Integer> e) throws Exception
+            {
+                VolleyLog.d("发射1");
+                e.onNext(1);
+                VolleyLog.d("发射2");
+                e.onNext(2);
+                VolleyLog.d("发射3");
+                e.onNext(3);
+                VolleyLog.d("发射4");
+                e.onNext(4);
+            }
+        }, BackpressureStrategy.ERROR).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<Integer>() 
+        {
+            @Override
+            public void onSubscribe(Subscription s) 
+            {
+                VolleyLog.d("onSubscrib");
+               // s.request(Long.MAX_VALUE);
+            }
+
+            @Override
+            public void onNext(Integer integer) 
+            {
+             VolleyLog.d("下游得到的数字：%d",integer);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 
     private void zipRequestStudy()

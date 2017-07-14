@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnOkGo3;
     @Bind(R.id.btnOkGo4)
     Button btnOkGo4;
+    @Bind(R.id.btnOkGo5)
+    Button btnOkGo5;
 
     private Activity activity;
 
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btnOkGo, R.id.btnOkGo1, R.id.btnOkGo2, R.id.btnOkGo3, R.id.btnOkGo4})
+    @OnClick({R.id.btnOkGo, R.id.btnOkGo1, R.id.btnOkGo2, R.id.btnOkGo3, R.id.btnOkGo4,R.id.btnOkGo5})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btnOkGo:
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btnOkGo4:
                 startActivity(new Intent(activity, GlideActivity.class));
+                break;
+            case R.id.btnOkGo5:
+                startActivity(new Intent(activity, NewNetActivity.class));
                 break;
         }
     }

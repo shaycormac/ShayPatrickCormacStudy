@@ -21,6 +21,10 @@
         <activity
             android:name=".activity.ChainActivity"
             android:label="@string/title_activity_chain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.SecondChainActivity"
+            android:label="@string/title_activity_second_chain"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

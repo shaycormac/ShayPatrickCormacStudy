@@ -3,6 +3,10 @@
     package="com.assassin.rxjava">
 
     <uses-permission android:name="android.permission.INTERNET" />
+   <!-- 下面这些事使用到缓存的时候需要用的-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -14,9 +18,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-           
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".activity.Rxjava2Activity"
             android:label="@string/title_activity_rxjava2"
@@ -26,9 +28,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-            
         </activity>
+        <activity android:name=".activity.RxNetRequestStudyActivity"></activity>
     </application>
 
 </manifest>

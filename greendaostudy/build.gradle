@@ -32,6 +32,10 @@ android
        // daoPackage 'com.assassin.greendaostudy'
         targetGenDir 'src/main/java'
     }
+            lintOptions
+                    {
+                        abortOnError false
+                    }
 }
 
 dependencies {
