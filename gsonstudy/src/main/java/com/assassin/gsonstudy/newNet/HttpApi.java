@@ -33,8 +33,6 @@ public class HttpApi<T>
 //    public static final String NEW_HOST = "http://172.16.55.125:8090";
     public static final String NEW_HOST = "http://mobile.goldmantis.com:7090";//正式
 
-    //    public static final String ZhongAnURL = "https://mp.zhongan.com/DEV_ALI9E6Y8O/tuan/xieyingshuang/user/v2-indexPage.html?source=goldMantis&certiNo=659001199401110611&phone=18259713978";
-    public static final String ZhongAnURL = "https://mp.zhongan.com/DEV_ALI9E6Y8O/tuan/yisonli/user/v2-indexPage.html?source=goldMantis";
     public final static String GET_UNREAD_EMAILSID = PROTOCOL_HOST + "/Universal/EmailGet.ashx?RequestType=2";//获取邮件sid
     public final static String GET_UNREAD_EMAILCOUNT = PROTOCOL_HOST + "/Universal/EmailGet.ashx?RequestType=1";//获取未读邮件个数
     public final static String GET_UNREAD_NEWEMAIL = PROTOCOL_HOST + "/Universal/EmailGet.ashx?RequestType=3";//获取新邮件
