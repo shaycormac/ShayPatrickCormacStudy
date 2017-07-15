@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.assassin.gsonstudy.R;
 import com.assassin.gsonstudy.newNet.Author;
-import com.assassin.gsonstudy.newNet.HttpApi;
 import com.assassin.gsonstudy.newNet.MyCallback;
+import com.assassin.gsonstudy.newNet.NetHttp;
 import com.assassin.gsonstudy.newNet.NetJson;
 import com.assassin.gsonstudy.utils.VolleyLog;
 
@@ -28,7 +28,7 @@ public class NewNetActivity extends AppCompatActivity {
 
     private void initNet() 
     {
-        new HttpApi<NetJson<List<Author>>>(this, new MyCallback<NetJson<List<Author>>>() 
+        new NetHttp<NetJson<List<Author>>>(this, new MyCallback<NetJson<List<Author>>>() 
         {
             @Override
             public void onSuccess(NetJson<List<Author>> listNetJson, Call call, Response response)

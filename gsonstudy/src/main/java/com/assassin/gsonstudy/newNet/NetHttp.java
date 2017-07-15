@@ -4,31 +4,28 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 
 /**
- * @Author: Shay-Patrick-Cormac
- * @Email: fang47881@126.com
- * @Ltd: GoldMantis
- * @Date: 2017/7/14 11:16
- * @Version: 1.0 
- * @Description:  兼容类
+ * @author 作者：Shay-Patrick-Cormac
+ * @datetime 创建时间：2017/7/15 12:41
+ * @email 邮箱： 574583006@qq.com
+ * @content 说明：创建这个类的意义，目的。
  */
+public class NetHttp<T> {
 
-public class HttpApi<T>
-{
     //请求网络所依附的activity或者fragment
     private Object object;
     private MyCallback<T> callback;
 
-    public HttpApi(Object object, MyCallback<T> callback) 
+    public NetHttp(Object object, MyCallback<T> callback)
     {
         this.object = object;
         this.callback = callback;
     }
 
-   
+
 
 
     //post请求
-    public void post( String path, HttpParams params) 
+    public void post( String path, HttpParams params)
     {
         /*if(!NetWorkUtils.isNetworkConnected(ErpApp.getContext())){
             ToastUtil.showShort("无网络连接,请检查网络设置");
@@ -40,7 +37,7 @@ public class HttpApi<T>
     }
 
     //get请求
-    public  void get(String path, HttpParams params) 
+    public  void get(String path, HttpParams params)
     {
         /*if(!NetWorkUtils.isNetworkConnected(ErpApp.getContext())){
             ToastUtil.showShort("无网络连接,请检查网络设置");
@@ -50,7 +47,7 @@ public class HttpApi<T>
                 .params(params)
                 .execute(callback);
     }
-    
+
     /**post带有表单的请求
      * 添加日程 (请求头是application_json)
      * @param path        路径
@@ -63,13 +60,11 @@ public class HttpApi<T>
                 .tag(object)
                 .execute(callback);
     }
-    
+
     /*************************************请求的方法体**********************************************************/
-    
+
     public void getJsonObject()
     {
         get(Urls.URL_JSONARRAY, null);
     }
-    
 }
-
